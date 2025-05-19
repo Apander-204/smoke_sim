@@ -6,7 +6,7 @@
   "homepage": "https://apander-204.github.io/smoke_sim",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

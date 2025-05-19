@@ -13,20 +13,20 @@ function Shop( {inventory, setInventory, balance, setBalance} ) {
         {
             id: 2,
             price: 10,
-            name: 'Обычная сигарета',
-            image: "https://i.imgur.com/RC8OpOk.png"
+            name: 'Редкая сигарета',
+            image: "https://s.iimg.su/s/19/xpetSWTyxwbOtiR3lwT11PqacT2EsIInSM1O2BY0.png"
         },
         {
             id: 3,
             price: 10,
-            name: 'Обычная сигарета',
-            image: "https://i.imgur.com/RC8OpOk.png"
+            name: 'Эпическая сигарета',
+            image: "https://s.iimg.su/s/19/9MRHjB7rYoQv5F7ETz6Xv8EGTtcM3iqMFG4dUDyR.png"
         },
         {
             id: 4,
             price: 10,
-            name: 'Обычная сигарета',
-            image: "https://i.imgur.com/RC8OpOk.png"
+            name: 'Легендарная сигарета',
+            image: "https://s.iimg.su/s/19/c47ezUttddzLOSBGSgdkxhQ2ExYun0f7kysJMFmA.png"
         }
     ]);
 
@@ -61,12 +61,21 @@ function Shop( {inventory, setInventory, balance, setBalance} ) {
 
     return(
         <div>
+            {activeItem ? (
+                <div className="bg-[#242424] h-[100px] flex justify-center items-center gap-[75px] rounded-[10px]">
+                    <h3 className="text-[#10B981]">{items[activeItem-1].name}</h3>
+                    <h3 className="text-[#10B981]">Цена: {items[activeItem-1].price}</h3>
+                </div>
+            ) : null}
             <div className="grid grid-cols-2 gap-x-[88px]">
                {items.map(item => item.id===activeItem ?
                (
+                <div>
                     <div key={item.id} className={activeStyle} onClick={() => choiceItem(item.id)}>
                         <img src={item.image} />
-                    </div> 
+                    </div>   
+                </div>
+                    
                 )
                 :
                 (

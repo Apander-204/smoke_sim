@@ -33,8 +33,8 @@ function Craft( {craftItems, setCraftItems, inventory, setInventory} ) {
         if(counterCell[0]==1 && counterCell[1]==2) {
             setCraftItems(prev => {
                 const prevCraftItems = prev;
-                prevCraftItems.tabacco = prevCraftItems.tabacco-0.5;
-                prevCraftItems.paper = prevCraftItems.paper-0.5;
+                prevCraftItems.tabacco = prevCraftItems.tabacco-1;
+                prevCraftItems.paper = prevCraftItems.paper-1;
                 return prevCraftItems;
             });
             setInventory(inventory.concat(
@@ -100,14 +100,14 @@ function Craft( {craftItems, setCraftItems, inventory, setInventory} ) {
 
     return(
         <div>
-            {choiceCell ? (<div className="bg-[#242424] h-[165px] flex justify-center items-center gap-[75px] rounded-[10px]">
+            {choiceCell ? (<div className="bg-[#242424] h-[100px] flex justify-center items-center gap-[75px] rounded-[10px]">
                 <div className={ItemStyleChange(1)} onClick={() => ChoiceItems(1)}>
                     <img src="https://iimg.su/s/07/igkgH4Mx3RFWkpic1irebyiRmsKl69QdBb49ImMZ.png"/>
-                    <div>{craftItems.tabacco}</div>
+                    <div className="text-[#10B981]">{craftItems.tabacco}</div>
                 </div>
                 <div className={ItemStyleChange(2)} onClick={() => ChoiceItems(2)}>
                     <img src="https://iimg.su/s/07/F2moANUPGoOiiKzu3IdTByU5sQOcXvVo8aQGfTh5.png"/>
-                    <div>{craftItems.paper}</div>
+                    <div className="text-[#10B981]">{craftItems.paper}</div>
                 </div>
             </div>) : <div></div>}
             

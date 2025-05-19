@@ -35,8 +35,8 @@ function Main({inventory, balance, setBalance, setInventory, craftItems, setCraf
             setInventory(prevInventory => prevInventory.filter((_, index) => index !== indexItem));
             setCraftItems(prev => {
                 const prevCraftItems = prev;
-                prevCraftItems.tabacco = prevCraftItems.tabacco+0.5;
-                prevCraftItems.paper = prevCraftItems.paper+0.5;
+                prevCraftItems.tabacco = prevCraftItems.tabacco+1;
+                prevCraftItems.paper = prevCraftItems.paper+1;
                 return prevCraftItems;
             });
             setIndexItem(0);
@@ -54,7 +54,7 @@ function Main({inventory, balance, setBalance, setInventory, craftItems, setCraf
                     setSmoking(false);
                     setBalance(balance + 1);
                     setInventory(prevInventory => prevInventory.map((item, index) => 
-                        index === indexItem ? {...item, durability: item.durability-0.5} : item
+                        index === indexItem ? {...item, durability: item.durability-1} : item
                     ));
                     clearInterval(interval);
                     return;

@@ -33,8 +33,8 @@ function App() {
 
   const [craftItems, setCraftItems] = useState(
     {
-      tabacco: 3,
-      paper: 3
+      tabacco: 0,
+      paper: 0
     }
   );
 
